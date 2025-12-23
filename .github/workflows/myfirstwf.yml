@@ -1,11 +1,8 @@
 name: MyFirstWorkflow
-on: push
+on: workflow_dispatch
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Welcome message
-        run: echo "Welcome to the world of GitHub Actions!"
-
-      - name: Check runner OS
-        run: cat /etc/os-release
+      - name: Addition 
+        run: expr 1 + 1
