@@ -2,28 +2,16 @@ name: MyFirstWorkflow
 on: push
 jobs:
   my_first_job:
-    runs-on: self-hosted
-    steps:
-      - name: Clone Repo
-        uses: actions/checkout@v6
-
-      - name: list files
-        run: |
-              ls -la
-              
-
-  my_Second_job:
     runs-on: ubuntu-latest
-    needs: my_first_job
     steps:
-      - name: Install nodejs
-        uses: actions/setup-node@v6
-        with:
-          node-version: '20'
+      - name: Creating a report file
+        run: echo "This is my first GitHub Actions workflow!" > report.txt
 
-      - name: Check node js version
-        run: node --version
-         
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-report
+          path: report.txt
 
 
 
