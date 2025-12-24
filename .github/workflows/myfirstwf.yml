@@ -13,9 +13,9 @@ jobs:
     needs: my_first_job
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
-          name: my-report
+          name: report.txt
 
       - name: Check artifact content
         run: cat report.txt
