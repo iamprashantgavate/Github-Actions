@@ -2,13 +2,15 @@ name: MyFirstWorkflow
 on: push
 jobs:
   my_first_job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Clone Repo
         uses: actions/checkout@v6
 
       - name: list files
-        run: ls -la
+        run: |
+              ls -la
+              cat file1
 
   my_Second_job:
     runs-on: ubuntu-latest
