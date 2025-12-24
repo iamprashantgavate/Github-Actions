@@ -10,7 +10,7 @@ jobs:
       - name: list files
         run: |
               ls -la
-              cat file1
+              
 
   my_Second_job:
     runs-on: ubuntu-latest
