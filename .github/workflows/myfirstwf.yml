@@ -3,33 +3,18 @@ on: push
 jobs:
   myjob1:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: setup node
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: ${{ matrix['node-version'] }}
 
-  myjob2:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: setup node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
 
-  myjob3:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: setup node
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
 
 
 
