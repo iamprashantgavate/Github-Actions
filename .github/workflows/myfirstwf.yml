@@ -13,6 +13,7 @@ jobs:
 
       - name: aws cli check
         run: aws --version
+        
       - name: S3 List Buckets
         run: aws s3 ls
  
